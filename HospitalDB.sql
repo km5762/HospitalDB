@@ -15,34 +15,36 @@ CREATE TABLE employee (
 )
 
 CREATE TABLE doctor (
-    employeeid,
-    gender,
-    specialty,
-    graduatedfrom
-)
+    employeeid    INTEGER,
+    gender        VARCHAR2,
+    specialty     VARCHAR2,
+    graduatedfrom VARCHAR2
+);
 
-CREATE TABLE equipmenttechnician ( employeeid )
+CREATE TABLE equipmenttechnician (
+    employeeid INTEGER
+);
 
 CREATE TABLE canrepairequipment (
-    employeeid,
-    equipmenttype
-)
+    employeeid    INTEGER,
+    equipmenttype VARCHAR2
+);
 
 CREATE TABLE equipmenttype (
-    id,
-    desc,
-    model,
-    instructions,
-    numberofunits
-)
+    id            INTEGER,
+    desc          VARCHAR2,
+    model         VARCHAR2,
+    instructions  VARCHAR2,
+    numberofunits INTEGER
+);
 
 CREATE TABLE equipment (
-    serialnum,
-    typeid,
-    purchaseyear,
-    lastinspection,
-    roomnum
-)
+    serialnum        INTEGER,
+    typeid         INTEGER,
+    purchaseyear   INTEGER,
+    lastinspection DATE,
+    roomnum        INTEGER
+);
 
 CREATE TABLE room (
     roomnum number primary key,
