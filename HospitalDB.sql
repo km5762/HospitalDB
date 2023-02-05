@@ -1,7 +1,7 @@
 CREATE TABLE employee (
-    employeeid    NUMBER,
-    fname         VARCHAR2(40),
-    lname         VARCHAR2(40),
+    employeeid    INTEGER,
+    firstname     VARCHAR2(40),
+    lastname      VARCHAR2(40),
     salary        INTEGER,
     jobtitle      VARCHAR(40),
     officenum     INTEGER,
@@ -12,7 +12,7 @@ CREATE TABLE employee (
     addresszip    INTEGER,
     CONSTRAINT employee_supervisorid_fk FOREIGN KEY ( supervisorid )
         REFERENCES employee ( employeeid ),
-        constraint employee_pk primary key (employeeid)
+    CONSTRAINT employee_pk PRIMARY KEY ( employeeid )
 );
 
 CREATE TABLE doctor (
@@ -29,21 +29,37 @@ CREATE TABLE doctor (
 CREATE TABLE equipmenttechnician (
     employeeid INTEGER,
     CONSTRAINT equipmenttechnician_pk PRIMARY KEY ( employeeid ),
-    CONSTRAINT equipmenttechnician_employeeid_fk FOREIGN KEY ( employeeid )
+    CONSTRAINT equiptechnician_employeeid_fk FOREIGN KEY ( employeeid )
         REFERENCES employee ( employeeid )
+);
+
+CREATE TABLE room (
+    roomnum      INTEGER,
+    occupiedflag CHAR(1),
+    CONSTRAINT occupied_check CHECK ( occupiedflag IN ( '1', '0' ) ),
+    CONSTRAINT room_pk PRIMARY KEY ( roomnum )
+);
+
+CREATE TABLE equipmenttype (
+    equipmenttypeid INTEGER,
+    equipmentdesc   VARCHAR2(500),
+    equipmentmodel  VARCHAR2(500),
+    instructions    VARCHAR2(500),
+    numberofunits   INTEGER,
+    CONSTRAINT equipmenttypeid_pk PRIMARY KEY ( equipmenttypeid )
 );
 
 CREATE TABLE canrepairequipment (
     employeeid      INTEGER,
     equipmenttypeid INTEGER,
-    CONSTRAINT canrepairequipment_equipmenttypeid_fk FOREIGN KEY ( equipmenttypeid )
+    CONSTRAINT canrepairequip_equiptypid_fk FOREIGN KEY ( equipmenttypeid )
         REFERENCES equipmenttype ( equipmenttypeid ),
     CONSTRAINT canrepairequipment_pk PRIMARY KEY ( employeeid,
                                                    equipmenttypeid )
 );
 
 CREATE TABLE equipment (
-    serialnum       VARCHAR2,
+    serialnum       VARCHAR2(40),
     equipmenttypeid INTEGER,
     purchaseyear    INTEGER,
     lastinspection  DATE,
@@ -55,24 +71,8 @@ CREATE TABLE equipment (
     CONSTRAINT equipment_pk PRIMARY KEY ( serialnum )
 );
 
-CREATE TABLE equipmenttype (
-    equipmenttypeid INTEGER,
-    equipmentdesc   VARCHAR2,
-    equipmentmodel  VARCHAR2,
-    instructions    VARCHAR2,
-    numberofunits   INTEGER,
-    CONSTRAINT equipmenttypeid_pk PRIMARY KEY ( equipmenttypeid )
-);
-
-CREATE TABLE room (
-    roomnum      NUMBER,
-    occupiedflag CHAR(1),
-    CONSTRAINT occupied_check CHECK ( occupiedflag IN ( '1', '0' ) ),
-    constraint room_pk primary key (roomnum)
-);
-
 CREATE TABLE roomservice (
-    roomnum NUMBER,
+    roomnum INTEGER,
     service VARCHAR2(255),
     CONSTRAINT roomservice_roomnum_fk FOREIGN KEY ( roomnum )
         REFERENCES room ( roomnum ),
@@ -81,8 +81,8 @@ CREATE TABLE roomservice (
 );
 
 CREATE TABLE roomaccess (
-    roomnum    NUMBER,
-    employeeid NUMBER,
+    roomnum    INTEGER,
+    employeeid INTEGER,
     CONSTRAINT roomaccess_roomnum_fk FOREIGN KEY ( roomnum )
         REFERENCES room ( roomnum ),
     CONSTRAINT roomaccess_empid_fk FOREIGN KEY ( employeeid )
@@ -106,7 +106,7 @@ CREATE TABLE admission (
     leavedate        DATE,
     totalpayment     NUMBER,
     insurancepayment NUMBER,
-    ssn              INTEGER,
+    ssn              CHAR(12),
     futurevisit      DATE,
     FOREIGN KEY ( ssn )
         REFERENCES patient ( ssn ),
