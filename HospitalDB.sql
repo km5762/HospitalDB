@@ -1,3 +1,35 @@
+CREATE TABLE doctor (
+    employeeid    INTEGER,
+    gender        VARCHAR2(20),
+    specialty     VARCHAR2(20),
+    graduatedfrom VARCHAR2(20)
+);
+
+CREATE TABLE equipmenttechnician (
+    employeeid INTEGER
+);
+
+CREATE TABLE canrepairequipment (
+    employeeid    INTEGER,
+    equipmenttype VARCHAR2(20)
+);
+
+CREATE TABLE equipmenttype (
+    eid            INTEGER,
+    edesc     VARCHAR2(20),
+    emodel         VARCHAR2(20),
+    instructions  VARCHAR2(20),
+    numberofunits INTEGER
+);
+
+CREATE TABLE equipment (
+    serialnum        INTEGER,
+    typeid         INTEGER,
+    purchaseyear   INTEGER,
+    lastinspection DATE,
+    roomnum        INTEGER
+);
+
 CREATE TABLE employee (
     id            NUMBER PRIMARY KEY,
     fname         VARCHAR2(40),
@@ -73,14 +105,16 @@ CREATE TABLE roomaccess (
 )
 
 CREATE TABLE patient (
-    ssn,
-    firstname,
-    lastname,
-    address,
-    telnum
+    ssn number,
+    firstname Varchar2(40),
+    lastname Varchar2(40),
+    address Varchar2(40),
+    telnum integer,
+    Constraint pk_patient primary key (ssn)
 )
 
 CREATE TABLE admission (
+<<<<<<< HEAD
     anum,
     admissiondate,
     leavedate,
@@ -88,6 +122,17 @@ CREATE TABLE admission (
     insurancepayment,
     patient_ssn,
     futurevisit
+=======
+    anum integer,
+    admissiondate date,
+    leavedate date,
+    totalpayment real,
+    insurancepayment real,
+    patient_ssn integer,
+    futurevisit date,
+    foreign key (patient_ssn) references patient (ssn),
+    Constraint pk_admission primary key (anum)
+>>>>>>> 7a98db8118fe4c39906bb74c565d868c35dce3b7
 )
 
 CREATE TABLE examine (
