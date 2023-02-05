@@ -41,12 +41,12 @@ CREATE TABLE employee (
     jobtitle      VARCHAR(40),
     officenum     INTEGER,
     emprank       VARCHAR2(40),
-    supervisorid  interger,
+    supervisorid  INTEGER,
     addressstreet VARCHAR2(40),
     addresscity   VARCHAR2(40),
     addresszip    INTEGER,
     CONSTRAINT employee_supervisorid_fk FOREIGN KEY ( supervisorid )
-        REFERENCES employee ( id )
+        REFERENCES employee ( employeeid )
 )
 
 CREATE TABLE equipmenttype (
