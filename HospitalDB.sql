@@ -119,15 +119,6 @@ CREATE TABLE patient (
 )
 
 CREATE TABLE admission (
-<<<<<<< HEAD
-    anum,
-    admissiondate,
-    leavedate,
-    totalpayment,
-    insurancepayment,
-    patient_ssn,
-    futurevisit
-=======
     anum integer,
     admissiondate date,
     leavedate date,
@@ -137,7 +128,6 @@ CREATE TABLE admission (
     futurevisit date,
     foreign key (patient_ssn) references patient (ssn),
     Constraint pk_admission primary key (anum)
->>>>>>> 7a98db8118fe4c39906bb74c565d868c35dce3b7
 )
 
 CREATE TABLE examine (
