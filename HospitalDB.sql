@@ -101,7 +101,7 @@ CREATE TABLE admission (
     insurancepayment NUMBER,
     patientssn       INTEGER,
     futurevisit      DATE,
-    FOREIGN KEY ( patient_ssn )
+    FOREIGN KEY ( patientssn )
         REFERENCES patient ( ssn ),
     CONSTRAINT admission_pk PRIMARY KEY ( anum )
 )
