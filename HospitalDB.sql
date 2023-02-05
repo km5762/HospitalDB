@@ -17,7 +17,7 @@ CREATE TABLE equipmenttechnician (
 
 CREATE TABLE canrepairequipment (
     employeeid    INTEGER,
-    equipmenttype VARCHAR2(20),
+    equipmentid INTEGER,
     CONSTRAINT canrepairequipment_pk PRIMARY KEY ( employeeid,
                                                    equipmenttype )
 );
@@ -71,13 +71,13 @@ CREATE TABLE roomservice (
 
 CREATE TABLE roomaccess (
     roomnum NUMBER,
-    empid   NUMBER,
+    employeeid   NUMBER,
     CONSTRAINT roomaccess_roomnum_fk FOREIGN KEY ( roomnum )
         REFERENCES room ( roomnum ),
-    CONSTRAINT roomaccess_empid_fk FOREIGN KEY ( empid )
-        REFERENCES employee ( id ),
+    CONSTRAINT roomaccess_empid_fk FOREIGN KEY ( employeeid )
+        REFERENCES employee ( employeeid ),
     CONSTRAINT roomaccess_pk PRIMARY KEY ( roomnum,
-                                           empid )
+                                           employeeid )
 )
 
 CREATE TABLE patient (
@@ -103,14 +103,14 @@ CREATE TABLE admission (
 )
 
 CREATE TABLE examine (
-    doctorid       INTEGER,
+    employeeid       INTEGER,
     admissionnum   INTEGER,
     doctorscomment VARCHAR2(500),
-    CONSTRAINT examine_doctorid_fk FOREIGN KEY ( doctorid )
+    CONSTRAINT examine_doctorid_fk FOREIGN KEY ( employeeid )
         REFERENCES doctor ( employeeid ),
     CONSTRAINT examine_admissionnum_fk FOREIGN KEY ( admissionnum )
         REFERENCES admission ( anum ),
-    CONSTRAINT exampine_pk PRIMARY KEY ( doctorid,
+    CONSTRAINT examine_pk PRIMARY KEY ( employeeid,
                                          admissionnum )
 )
 
