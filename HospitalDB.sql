@@ -1,9 +1,27 @@
+CREATE TABLE employee (
+    employeeid    NUMBER,
+    fname         VARCHAR2(40),
+    lname         VARCHAR2(40),
+    salary        INTEGER,
+    jobtitle      VARCHAR(40),
+    officenum     INTEGER,
+    employeerank  VARCHAR2(40),
+    supervisorid  INTEGER,
+    addressstreet VARCHAR2(40),
+    addresscity   VARCHAR2(40),
+    addresszip    INTEGER,
+    CONSTRAINT employee_supervisorid_fk FOREIGN KEY ( supervisorid )
+        REFERENCES employee ( employeeid ),
+        constraint employee_pk primary key (employeeid)
+);
+
 CREATE TABLE doctor (
     employeeid    INTEGER,
     gender        VARCHAR2(20),
     specialty     VARCHAR2(20),
     graduatedfrom VARCHAR2(20),
     CONSTRAINT doctor_pk PRIMARY KEY ( employeeid ),
+    CONSTRAINT gender_check CHECK ( gender IN ( 'Male', 'Female' ) ),
     CONSTRAINT doctor_employeeid_fk FOREIGN KEY ( employeeid )
         REFERENCES employee ( employeeid )
 );
@@ -25,7 +43,7 @@ CREATE TABLE canrepairequipment (
 );
 
 CREATE TABLE equipment (
-    serialnum       INTEGER,
+    serialnum       VARCHAR2,
     equipmenttypeid INTEGER,
     purchaseyear    INTEGER,
     lastinspection  DATE,
@@ -37,22 +55,6 @@ CREATE TABLE equipment (
     CONSTRAINT equipment_pk PRIMARY KEY ( serialnum )
 );
 
-CREATE TABLE employee (
-    employeeid    NUMBER PRIMARY KEY,
-    fname         VARCHAR2(40),
-    lname         VARCHAR2(40),
-    salary        INTEGER,
-    jobtitle      VARCHAR(40),
-    officenum     INTEGER,
-    emprank       VARCHAR2(40),
-    supervisorid  INTEGER,
-    addressstreet VARCHAR2(40),
-    addresscity   VARCHAR2(40),
-    addresszip    INTEGER,
-    CONSTRAINT employee_supervisorid_fk FOREIGN KEY ( supervisorid )
-        REFERENCES employee ( employeeid )
-)
-
 CREATE TABLE equipmenttype (
     equipmenttypeid INTEGER,
     equipmentdesc   VARCHAR2,
@@ -63,10 +65,11 @@ CREATE TABLE equipmenttype (
 );
 
 CREATE TABLE room (
-    roomnum      NUMBER PRIMARY KEY,
+    roomnum      NUMBER,
     occupiedflag CHAR(1),
-    CONSTRAINT occupied_check CHECK ( occupiedflag IN ( '1', '0' ) )
-)
+    CONSTRAINT occupied_check CHECK ( occupiedflag IN ( '1', '0' ) ),
+    constraint room_pk primary key (roomnum)
+);
 
 CREATE TABLE roomservice (
     roomnum NUMBER,
@@ -75,7 +78,7 @@ CREATE TABLE roomservice (
         REFERENCES room ( roomnum ),
     CONSTRAINT roomservice_pk PRIMARY KEY ( roomnum,
                                             service )
-)
+);
 
 CREATE TABLE roomaccess (
     roomnum    NUMBER,
@@ -86,29 +89,29 @@ CREATE TABLE roomaccess (
         REFERENCES employee ( employeeid ),
     CONSTRAINT roomaccess_pk PRIMARY KEY ( roomnum,
                                            employeeid )
-)
-
+);
+--ssn will be "111-222-3333"
 CREATE TABLE patient (
-    ssn       NUMBER,
+    ssn       CHAR(12),
     firstname VARCHAR2(40),
     lastname  VARCHAR2(40),
     address   VARCHAR2(40),
     telnum    INTEGER,
     CONSTRAINT pk_patient PRIMARY KEY ( ssn )
-)
+);
 
 CREATE TABLE admission (
-    anum             INTEGER,
+    admissionnum     INTEGER,
     admissiondate    DATE,
     leavedate        DATE,
     totalpayment     NUMBER,
     insurancepayment NUMBER,
-    patientssn       INTEGER,
+    ssn              INTEGER,
     futurevisit      DATE,
-    FOREIGN KEY ( patientssn )
+    FOREIGN KEY ( ssn )
         REFERENCES patient ( ssn ),
-    CONSTRAINT admission_pk PRIMARY KEY ( anum )
-)
+    CONSTRAINT admission_pk PRIMARY KEY ( admissionnum )
+);
 
 CREATE TABLE examine (
     employeeid     INTEGER,
@@ -117,10 +120,10 @@ CREATE TABLE examine (
     CONSTRAINT examine_doctorid_fk FOREIGN KEY ( employeeid )
         REFERENCES doctor ( employeeid ),
     CONSTRAINT examine_admissionnum_fk FOREIGN KEY ( admissionnum )
-        REFERENCES admission ( anum ),
+        REFERENCES admission ( admissionnum ),
     CONSTRAINT examine_pk PRIMARY KEY ( employeeid,
                                         admissionnum )
-)
+);
 
 CREATE TABLE stayin (
     admissionnum INTEGER,
@@ -130,8 +133,8 @@ CREATE TABLE stayin (
     CONSTRAINT fk_roomnum FOREIGN KEY ( roomnum )
         REFERENCES room ( roomnum ),
     CONSTRAINT stayin_admissionnum_fk FOREIGN KEY ( admissionnum )
-        REFERENCES admission ( anum ),
+        REFERENCES admission ( admissionnum ),
     CONSTRAINT stayin_pk PRIMARY KEY ( admissionnum,
                                        roomnum,
                                        startdate )
-)
+);
