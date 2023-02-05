@@ -23,7 +23,7 @@ CREATE TABLE equipmenttype (
 );
 
 CREATE TABLE equipment (
-    serial#        INTEGER,
+    serialnum        INTEGER,
     typeid         INTEGER,
     purchaseyear   INTEGER,
     lastinspection DATE,
