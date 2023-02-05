@@ -18,6 +18,8 @@ CREATE TABLE equipmenttechnician (
 CREATE TABLE canrepairequipment (
     employeeid      INTEGER,
     equipmenttypeid INTEGER,
+    CONSTRAINT canrepairequipment_equipmenttypeid_fk FOREIGN KEY ( equipmenttypeid )
+        REFERENCES equipmenttype ( equipmenttypeid ),
     CONSTRAINT canrepairequipment_pk PRIMARY KEY ( employeeid,
                                                    equipmenttypeid )
 );
@@ -29,7 +31,9 @@ CREATE TABLE equipment (
     lastinspection  DATE,
     roomnum         INTEGER,
     CONSTRAINT equipment_equipmenttypeid_fk FOREIGN KEY ( equipmenttypeid )
-        REFERENCES equipment ( equipmenttypeid ),
+        REFERENCES equipmenttype ( equipmenttypeid ),
+    CONSTRAINT equipment_roomnum_fk FOREIGN KEY ( roomnum )
+        REFERENCES room ( roomnum ),
     CONSTRAINT equipment_pk PRIMARY KEY ( serialnum )
 );
 
