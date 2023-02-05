@@ -39,16 +39,16 @@ CREATE TABLE employee (
     id            NUMBER PRIMARY KEY,
     fname         VARCHAR2(40),
     lname         VARCHAR2(40),
-    salary        NUMBER,
+    salary        INTEGER,
     jobtitle      VARCHAR(40),
-    officenum     NUMBER,
+    officenum     INTEGER,
     emprank       VARCHAR2(40),
-    supervisorid  NUMBER,
-    FOREIGN KEY ( supervisorid )
-        REFERENCES employee ( id ),
+    supervisorid  INTERGER,
     addressstreet VARCHAR2(40),
     addresscity   VARCHAR2(40),
-    addresszip    NUMBER
+    addresszip    INTEGER,
+    Constraint employee_supervisorid_fk FOREIGN KEY ( supervisorid )
+        REFERENCES employee ( id )
 )
 
 CREATE TABLE doctor (
@@ -76,7 +76,7 @@ CREATE TABLE equipmenttype (
 );
 
 CREATE TABLE equipment (
-    serialnum        INTEGER,
+    serialnum      INTEGER,
     typeid         INTEGER,
     purchaseyear   INTEGER,
     lastinspection DATE,
@@ -84,51 +84,84 @@ CREATE TABLE equipment (
 );
 
 CREATE TABLE room (
-    roomnum number primary key,
-    occupiedflag char(1),
-    Constraint occupied_check check(occupiedflag in ('1', '0'))
+    roomnum      NUMBER PRIMARY KEY,
+    occupiedflag CHAR(1),
+    CONSTRAINT occupied_check CHECK ( occupiedflag IN ( '1', '0' ) )
 )
 
 CREATE TABLE roomservice (
-    roomnum number,
-    service varchar2(255)
+    roomnum NUMBER,
+    service VARCHAR2(255),
+    CONSTRAINT roomservice_roomnum_fk FOREIGN KEY ( roomnum )
+        REFERENCES room ( roomnum ),
+    CONSTRAINT roomservice_pk PRIMARY KEY ( roomnum,
+                                            service )
 )
 
 CREATE TABLE roomaccess (
-    roomnum number,
-    empid number,
-    foreign key (roomnum) references room (roomnum),
-    foreign key (empid) references employee (id),
-    Constraint pk_roomaccess primary key (roomnum, empid)
+    roomnum NUMBER,
+    empid   NUMBER,
+    CONSTRAINT roomaccess_roomnum_fk FOREIGN KEY ( roomnum )
+        REFERENCES room ( roomnum ),
+    CONSTRAINT roomaccess_empid_fk FOREIGN KEY ( empid )
+        REFERENCES employee ( id ),
+    CONSTRAINT roomaccess_pk PRIMARY KEY ( roomnum,
+                                           empid )
 )
 
 CREATE TABLE patient (
-    ssn,
-    firstname,
-    lastname,
-    address,
-    telnum
+    ssn number,
+    firstname Varchar2(40),
+    lastname Varchar2(40),
+    address Varchar2(40),
+    telnum integer,
+    Constraint pk_patient primary key (ssn)
 )
 
 CREATE TABLE admission (
-    num,
+<<<<<<< HEAD
+    anum,
     admissiondate,
     leavedate,
     totalpayment,
     insurancepayment,
     patient_ssn,
     futurevisit
+=======
+    anum integer,
+    admissiondate date,
+    leavedate date,
+    totalpayment real,
+    insurancepayment real,
+    patient_ssn integer,
+    futurevisit date,
+    foreign key (patient_ssn) references patient (ssn),
+    Constraint pk_admission primary key (anum)
+>>>>>>> 7a98db8118fe4c39906bb74c565d868c35dce3b7
 )
 
 CREATE TABLE examine (
-    doctor id,
-    admissionnum,
-    comment
+    doctorid       INTEGER,
+    admissionnum   INTEGER,
+    doctorscomment VARCHAR2(500),
+    CONSTRAINT examine_doctorid_fk FOREIGN KEY ( doctorid )
+        REFERENCES doctor ( employeeid ),
+    CONSTRAINT examine_admissionnum_fk FOREIGN KEY ( admissionnum )
+        REFERENCES admission ( anum ),
+    CONSTRAINT exampine_pk PRIMARY KEY ( doctorid,
+                                         admissionnum )
 )
 
 CREATE TABLE stayin (
-    admissionnum,
-    roomnum,
-    startdate,
-    enddate
+    admissionnum INTEGER,
+    roomnum      INTEGER,
+    startdate    DATE,
+    enddate      DATE,
+    CONSTRAINT fk_roomnum FOREIGN KEY ( roomnum )
+        REFERENCES room ( roomnum ),
+    CONSTRAINT stayin_admissionnum_fk FOREIGN KEY ( admissionnum )
+        REFERENCES admission ( anum ),
+    CONSTRAINT stayin_pk PRIMARY KEY ( admissionnum,
+                                       roomnum,
+                                       startdate )
 )
