@@ -2,16 +2,21 @@ CREATE TABLE doctor (
     employeeid    INTEGER,
     gender        VARCHAR2(20),
     specialty     VARCHAR2(20),
-    graduatedfrom VARCHAR2(20)
+    graduatedfrom VARCHAR2(20),
+    CONSTRAINT doctor_pk PRIMARY KEY (employeeid),
+    CONSTRAINT doctor_id_fk FOREIGN KEY (employeeid) REFERENCES employee(id)
 );
 
 CREATE TABLE equipmenttechnician (
-    employeeid INTEGER
+    employeeid INTEGER,
+    CONSTRAINT equipmenttechnician_pk PRIMARY KEY (employeeid),
+    CONSTRAINT equipmenttechnician_id_fk FOREIGN KEY (employeeid) REFERENCES employee(id)
 );
 
 CREATE TABLE canrepairequipment (
     employeeid    INTEGER,
-    equipmenttype VARCHAR2(20)
+    equipmenttype VARCHAR2(20),
+    CONSTRAINT canrepairequipment_pk PRIMARY KEY (employeeid, equipmenttype)
 );
 
 CREATE TABLE equipmenttype (
