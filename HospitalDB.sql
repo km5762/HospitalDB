@@ -1,8 +1,8 @@
 CREATE TABLE doctor (
     employeeid    INTEGER,
-    gender        VARCHAR2,
-    specialty     VARCHAR2,
-    graduatedfrom VARCHAR2
+    gender        VARCHAR2(20),
+    specialty     VARCHAR2(20),
+    graduatedfrom VARCHAR2(20)
 );
 
 CREATE TABLE equipmenttechnician (
@@ -11,14 +11,14 @@ CREATE TABLE equipmenttechnician (
 
 CREATE TABLE canrepairequipment (
     employeeid    INTEGER,
-    equipmenttype VARCHAR2
+    equipmenttype VARCHAR2(20)
 );
 
 CREATE TABLE equipmenttype (
-    id            INTEGER,
-    desc          VARCHAR2,
-    model         VARCHAR2,
-    instructions  VARCHAR2,
+    eid            INTEGER,
+    edesc     VARCHAR2(20),
+    emodel         VARCHAR2(20),
+    instructions  VARCHAR2(20),
     numberofunits INTEGER
 );
 
