@@ -21,7 +21,6 @@ CREATE TABLE doctor (
     specialty     VARCHAR2(20),
     graduatedfrom VARCHAR2(20),
     CONSTRAINT doctor_pk PRIMARY KEY ( employeeid ),
-    CONSTRAINT gender_check CHECK ( gender IN ( 'Male', 'Female' ) ),
     CONSTRAINT doctor_employeeid_fk FOREIGN KEY ( employeeid )
         REFERENCES employee ( employeeid )
 );
