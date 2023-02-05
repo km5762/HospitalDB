@@ -14,68 +14,36 @@ CREATE TABLE canrepairequipment (
     equipmenttype VARCHAR2(20)
 );
 
-CREATE TABLE equipmenttype (
-    eid            INTEGER,
-    edesc     VARCHAR2(20),
-    emodel         VARCHAR2(20),
-    instructions  VARCHAR2(20),
-    numberofunits INTEGER
-);
-
 CREATE TABLE equipment (
-    serialnum        INTEGER,
-    typeid         INTEGER,
-    purchaseyear   INTEGER,
-    lastinspection DATE,
-    roomnum        INTEGER
+    serialnum       INTEGER,
+    equipmenttypeid INTEGER,
+    purchaseyear    INTEGER,
+    lastinspection  DATE,
+    roomnum         INTEGER
 );
 
 CREATE TABLE employee (
-    id            NUMBER PRIMARY KEY,
+    employeeid    NUMBER PRIMARY KEY,
     fname         VARCHAR2(40),
     lname         VARCHAR2(40),
     salary        INTEGER,
     jobtitle      VARCHAR(40),
     officenum     INTEGER,
     emprank       VARCHAR2(40),
-    supervisorid  INTERGER,
+    supervisorid  interger,
     addressstreet VARCHAR2(40),
     addresscity   VARCHAR2(40),
     addresszip    INTEGER,
-    Constraint employee_supervisorid_fk FOREIGN KEY ( supervisorid )
+    CONSTRAINT employee_supervisorid_fk FOREIGN KEY ( supervisorid )
         REFERENCES employee ( id )
 )
 
-CREATE TABLE doctor (
-    employeeid    INTEGER,
-    gender        VARCHAR2,
-    specialty     VARCHAR2,
-    graduatedfrom VARCHAR2
-);
-
-CREATE TABLE equipmenttechnician (
-    employeeid INTEGER
-);
-
-CREATE TABLE canrepairequipment (
-    employeeid    INTEGER,
-    equipmenttype VARCHAR2
-);
-
 CREATE TABLE equipmenttype (
-    id            INTEGER,
-    desc          VARCHAR2,
-    model         VARCHAR2,
-    instructions  VARCHAR2,
-    numberofunits INTEGER
-);
-
-CREATE TABLE equipment (
-    serialnum      INTEGER,
-    typeid         INTEGER,
-    purchaseyear   INTEGER,
-    lastinspection DATE,
-    roomnum        INTEGER
+    equipmenttypeid INTEGER,
+    equipmentdesc   VARCHAR2,
+    equipmentmodel  VARCHAR2,
+    instructions    VARCHAR2,
+    numberofunits   INTEGER
 );
 
 CREATE TABLE room (
@@ -105,34 +73,25 @@ CREATE TABLE roomaccess (
 )
 
 CREATE TABLE patient (
-    ssn number,
-    firstname Varchar2(40),
-    lastname Varchar2(40),
-    address Varchar2(40),
-    telnum integer,
-    Constraint pk_patient primary key (ssn)
+    ssn       NUMBER,
+    firstname VARCHAR2(40),
+    lastname  VARCHAR2(40),
+    address   VARCHAR2(40),
+    telnum    INTEGER,
+    CONSTRAINT pk_patient PRIMARY KEY ( ssn )
 )
 
 CREATE TABLE admission (
-<<<<<<< HEAD
-    anum,
-    admissiondate,
-    leavedate,
-    totalpayment,
-    insurancepayment,
-    patient_ssn,
-    futurevisit
-=======
-    anum integer,
-    admissiondate date,
-    leavedate date,
-    totalpayment real,
-    insurancepayment real,
-    patient_ssn integer,
-    futurevisit date,
-    foreign key (patient_ssn) references patient (ssn),
-    Constraint pk_admission primary key (anum)
->>>>>>> 7a98db8118fe4c39906bb74c565d868c35dce3b7
+    anum             INTEGER,
+    admissiondate    DATE,
+    leavedate        DATE,
+    totalpayment     REAL,
+    insurancepayment REAL,
+    patient_ssn      INTEGER,
+    futurevisit      DATE,
+    FOREIGN KEY ( patient_ssn )
+        REFERENCES patient ( ssn ),
+    CONSTRAINT pk_admission PRIMARY KEY ( anum )
 )
 
 CREATE TABLE examine (
