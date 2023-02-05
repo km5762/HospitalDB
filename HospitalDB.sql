@@ -98,21 +98,24 @@ CREATE TABLE roomaccess (
 )
 
 CREATE TABLE patient (
-    ssn,
-    firstname,
-    lastname,
-    address,
-    telnum
+    ssn number,
+    firstname Varchar2(40),
+    lastname Varchar2(40),
+    address Varchar2(40),
+    telnum integer,
+    Constraint pk_patient primary key (ssn)
 )
 
 CREATE TABLE admission (
-    num,
-    admissiondate,
-    leavedate,
-    totalpayment,
-    insurancepayment,
-    patient_ssn,
-    futurevisit
+    anum integer,
+    admissiondate date,
+    leavedate date,
+    totalpayment real,
+    insurancepayment real,
+    patient_ssn integer,
+    futurevisit date,
+    foreign key (patient_ssn) references patient (ssn),
+    Constraint pk_admission primary key (anum)
 )
 
 CREATE TABLE examine (
