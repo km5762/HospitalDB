@@ -26,3 +26,8 @@ insert into roomservice (roomnum, service) values (2, 'Ward Room');
 insert into roomservice (roomnum, service) values (2, 'Emergency Room');
 insert into roomservice (roomnum, service) values (3, 'ICU');
 insert into roomservice (roomnum, service) values (3, 'Operating Room');
+
+insert into equipmenttype (equipmenttypeid, equipmentdesc, equipmentmodel, instructions, numberofunits) values (1, 'Used to form pictures of the anatomy and the physiological processes of the body.', 'MRI', '1. Turn on 2. Use 3. Profit', 3);
+insert into equipmenttype (equipmenttypeid, equipmentdesc, equipmentmodel, instructions, numberofunits) values (2, 'Uses sound waves to produce images of structures within the body', 'Ultrasound', '1. Turn on 2. Use 3. Profit', 3);
+insert into equipmenttype (equipmenttypeid, equipmentdesc, equipmentmodel, instructions, numberofunits) values (3, 'Creates cross sectional imaging of bones, tissues, and blood vessels.', 'CT Scanner', '1. Turn on 2. Use 3. Profit', 3);
+
