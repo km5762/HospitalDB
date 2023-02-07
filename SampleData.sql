@@ -46,13 +46,13 @@ insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection,
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (1, date '2022-06-20', date '2022-08-08', 933, 513, '111-22-3333', date '2022-12-31');
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (2, date '2022-08-08', date '2022-09-26', 6301, 3341, '111-22-3333', date '2022-09-05');
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (3, date '2022-02-23', date '2022-04-09', 6514, 3254, '311-32-8832', date '2022-09-07');
-insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (4, date '2022-06-08', date '2022-07-02', 3813, 795, '311-32-8832', date '2022-04-11');
+insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (4, date '2022-06-08', date '2022-07-02', 3813, 795, '311-32-8832', null);
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (5, date '2022-03-25', date '2022-04-07', 5752, 3738, '435-70-2426', date '2022-04-23');
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (6, date '2022-03-26', date '2022-04-04', 5909, 5726, '435-70-2426', date '2022-09-10');
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (7, date '2022-07-25', date '2022-09-16', 9895, 2838, '547-41-4190', date '2022-09-17');
-insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (8, date '2022-09-15', date '2022-09-25', 8069, 6868, '547-41-4190', date '2022-09-21');
-insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (9, date '2022-07-09', date '2022-07-28', 755, 197, '860-98-6551', date '2023-01-18');
-insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (10, date '2023-01-19', date '2023-02-20', 8362, 1415, '860-98-6551', date '2022-04-09');
+insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (8, date '2022-09-15', date '2022-09-25', 8069, 6868, '547-41-4190', null);
+insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (9, date '2022-07-09', date '2022-07-28', 755, 197, '860-98-6551', null);
+insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (10, date '2023-01-19', date '2023-02-20', 8362, 1415, '860-98-6551', null);
 
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (1, 'Mozes', 'Kaliszewski', 77119, 'General Manager', 1, 'General Manager', null, '3351 Sauthoff Junction', 'Kano', 12704);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (2, 'Glynn', 'Mobius', 541284, 'General Manager', 2, 'General Manager', null, '01905 Claremont Avenue', 'R?msar', 14956);
