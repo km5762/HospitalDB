@@ -19,3 +19,10 @@ insert into room (roomnum, occupiedflag) values (7, 1);
 insert into room (roomnum, occupiedflag) values (8, 0);
 insert into room (roomnum, occupiedflag) values (9, 1);
 insert into room (roomnum, occupiedflag) values (10, 1);
+
+insert into roomservice (roomnum, service) values (1, 'ICU');
+insert into roomservice (roomnum, service) values (1, 'Consulting Room');
+insert into roomservice (roomnum, service) values (2, 'Ward Room');
+insert into roomservice (roomnum, service) values (2, 'Emergency Room');
+insert into roomservice (roomnum, service) values (3, 'ICU');
+insert into roomservice (roomnum, service) values (3, 'Operating Room');
