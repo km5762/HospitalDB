@@ -14,3 +14,4 @@ DROP TABLE EMPLOYEE;
 
 @CreateTables.sql
 @InitializeDataset.sql
+@Queries.sql
