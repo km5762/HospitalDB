@@ -103,6 +103,41 @@ insert into doctor (employeeid, gender, specialty, graduatedfrom) values (19, 'M
 insert into doctor (employeeid, gender, specialty, graduatedfrom) values (20, 'Female', 'Cardiology', 'Harvard');
 insert into doctor (employeeid, gender, specialty, graduatedfrom) values (21, 'Male', 'Immunology', 'John Hopkins');
 
+-- ROOM ACCESS
+insert into roomaccess (roomnum, employeeid) values (7, 13);
+insert into roomaccess (roomnum, employeeid) values (5, 21);
+insert into roomaccess (roomnum, employeeid) values (10, 15);
+insert into roomaccess (roomnum, employeeid) values (3, 3);
+insert into roomaccess (roomnum, employeeid) values (3, 9);
+insert into roomaccess (roomnum, employeeid) values (3, 2);
+insert into roomaccess (roomnum, employeeid) values (2, 20);
+insert into roomaccess (roomnum, employeeid) values (4, 10);
+insert into roomaccess (roomnum, employeeid) values (3, 15);
+insert into roomaccess (roomnum, employeeid) values (9, 4);
+insert into roomaccess (roomnum, employeeid) values (2, 10);
+insert into roomaccess (roomnum, employeeid) values (5, 4);
+insert into roomaccess (roomnum, employeeid) values (1, 4);
+insert into roomaccess (roomnum, employeeid) values (5, 2);
+insert into roomaccess (roomnum, employeeid) values (3, 8);
+insert into roomaccess (roomnum, employeeid) values (10, 2);
+insert into roomaccess (roomnum, employeeid) values (6, 14);
+insert into roomaccess (roomnum, employeeid) values (4, 4);
+insert into roomaccess (roomnum, employeeid) values (3, 16);
+insert into roomaccess (roomnum, employeeid) values (5, 1);
+insert into roomaccess (roomnum, employeeid) values (7, 17);
+insert into roomaccess (roomnum, employeeid) values (1, 10);
+insert into roomaccess (roomnum, employeeid) values (7, 13);
+insert into roomaccess (roomnum, employeeid) values (7, 9);
+insert into roomaccess (roomnum, employeeid) values (3, 10);
+insert into roomaccess (roomnum, employeeid) values (1, 18);
+insert into roomaccess (roomnum, employeeid) values (3, 10);
+insert into roomaccess (roomnum, employeeid) values (1, 1);
+insert into roomaccess (roomnum, employeeid) values (1, 7);
+insert into roomaccess (roomnum, employeeid) values (5, 19);
+
+
+
+
 
 
 

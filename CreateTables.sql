@@ -49,8 +49,8 @@ CREATE TABLE equipmenttype (
 );
 
 CREATE TABLE canrepairequipment (
-    employeeid      INTEGER,
     equipmenttypeid INTEGER,
+    employeeid      INTEGER,
     CONSTRAINT canrepairequip_equiptypid_fk FOREIGN KEY ( equipmenttypeid )
         REFERENCES equipmenttype ( equipmenttypeid ),
     CONSTRAINT canrepairequip_equiptech_fk FOREIGN KEY ( employeeid )
