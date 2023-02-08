@@ -115,8 +115,8 @@ CREATE TABLE admission (
 );
 
 CREATE TABLE examine (
-    employeeid     INTEGER,
     admissionnum   INTEGER,
+    employeeid     INTEGER,
     doctorscomment VARCHAR2(500),
     CONSTRAINT examine_doctorid_fk FOREIGN KEY ( employeeid )
         REFERENCES doctor ( employeeid ),

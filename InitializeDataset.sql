@@ -61,6 +61,12 @@ insert into admission (admissionnum, admissiondate, leavedate, totalpayment, ins
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (8, date '2022-09-15', date '2022-09-25', 8069, 6868, '547-41-4190', null);
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (9, date '2022-07-09', date '2022-07-28', 755, 197, '860-98-6551', null);
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (10, date '2023-01-19', date '2023-02-20', 8362, 1415, '860-98-6551', null);
+insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (11, date '2022-04-01', date '2022-05-21', 8595, 1234, '111-22-3333', null);
+insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (12, date '2022-04-27', date '2022-06-08', 8818, 2346, '111-22-3333', null);
+insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (13, date '2022-05-30', date '2022-06-08', 8576, 1237, '111-22-3333', null);
+insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (14, date '2023-01-11', date '2023-02-16', 9851, 5677, '111-22-3333', null);
+insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (15, date '2022-06-27', date '2022-08-08', 635, 333, '111-22-3333', null);
+insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (16, date '2022-02-22', date '2022-03-29', 3786, 2356, '111-22-3333', null);
 
 -- MANAGERS
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (1, 'Mozes', 'Kaliszewski', 77119, 'General Manager', 1, 'General Manager', null, '3351 Sauthoff Junction', 'Kano', 12704);
@@ -126,15 +132,34 @@ insert into roomaccess (roomnum, employeeid) values (3, 16);
 insert into roomaccess (roomnum, employeeid) values (5, 1);
 insert into roomaccess (roomnum, employeeid) values (7, 17);
 insert into roomaccess (roomnum, employeeid) values (1, 10);
-insert into roomaccess (roomnum, employeeid) values (7, 13);
 insert into roomaccess (roomnum, employeeid) values (7, 9);
-insert into roomaccess (roomnum, employeeid) values (3, 10);
 insert into roomaccess (roomnum, employeeid) values (1, 18);
 insert into roomaccess (roomnum, employeeid) values (3, 10);
 insert into roomaccess (roomnum, employeeid) values (1, 1);
 insert into roomaccess (roomnum, employeeid) values (1, 7);
 insert into roomaccess (roomnum, employeeid) values (5, 19);
 
+-- CAN REPAIR
+insert into canrepairequipment (equipmenttypeid, employeeid) values (2, 13);
+insert into canrepairequipment (equipmenttypeid, employeeid) values (2, 12);
+insert into canrepairequipment (equipmenttypeid, employeeid) values (3, 13);
+insert into canrepairequipment (equipmenttypeid, employeeid) values (2, 16);
+insert into canrepairequipment (equipmenttypeid, employeeid) values (2, 14);
+insert into canrepairequipment (equipmenttypeid, employeeid) values (3, 14);
+insert into canrepairequipment (equipmenttypeid, employeeid) values (1, 16);
+insert into canrepairequipment (equipmenttypeid, employeeid) values (3, 16);
+
+-- EXAMINATIONS 
+insert into examine (employeeid, admissionnum, doctorscomment) values (17, 1, 'Calcium Chloride');
+insert into examine (employeeid, admissionnum, doctorscomment) values (17, 2, 'MORPHINE SULFATE');
+insert into examine (employeeid, admissionnum, doctorscomment) values (17, 11, 'Polyethylene Glycol 3350');
+insert into examine (employeeid, admissionnum, doctorscomment) values (18, 12, 'Velvet Grass');
+insert into examine (employeeid, admissionnum, doctorscomment) values (18, 13, 'Midodrine Hydrochloride');
+insert into examine (employeeid, admissionnum, doctorscomment) values (18, 14, 'SODIUM MONOFLUOROPHOSPHATE');
+insert into examine (employeeid, admissionnum, doctorscomment) values (19, 15, 'Mycophenolate Mofetil');
+insert into examine (employeeid, admissionnum, doctorscomment) values (19, 16, 'potassium chloride');
+insert into examine (employeeid, admissionnum, doctorscomment) values (21, 5, 'alprazolam');
+insert into examine (employeeid, admissionnum, doctorscomment) values (20, 6, 'Ibuprofen');
 
 
 
