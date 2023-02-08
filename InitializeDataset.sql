@@ -75,14 +75,14 @@ insert into employee (employeeid, firstname, lastname, salary, jobtitle, officen
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (8, 'Elsa', 'Roache', 350224, 'Civil Engineer', 8, 'Employee', 4, '03 Fairview Avenue', 'Notodden', 93462);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (9, 'Abigale', 'Robelin', 360746, 'Quality Engineer', 9, 'Employee', 5, '60 Troy Avenue', 'Suugaant', 61957);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (10, 'Janeta', 'Bohman', 253120, 'Programmer I', 10, 'Employee', 6, '3 Moose Drive', 'Sulechów', 38477);
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (11, 'Cordelie', 'MacGillacolm', 351449, 'GIS Technical Architect', 3, 'Employee', 11, '72553 Elgar Avenue', 'Peoria', 36872);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (11, 'Cordelie', 'MacGillacolm', 351449, 'GIS Technical Architect', 11, 'Employee', 3, '72553 Elgar Avenue', 'Peoria', 36872);
 
 -- EQUIPMENT TECHS
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (12, 'Alyda', 'Seers', 324013, 'Equipment Technician', 12, 'Employee', 4, '574 Anthes Terrace', 'Nizhnedevitsk', 77412);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (13, 'Patrizia', 'Rablin', 281499, 'Equipment Technician', 13, 'Employee', 5, '190 Carpenter Place', 'Utan', 17765);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (14, 'Anatole', 'Uren', 130515, 'Equipment Technician', 14, 'Employee', 6, '32781 Little Fleur Avenue', 'Du’ermenqin', 18040);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (15, 'Yoshi', 'Harcase', 477221, 'Equipment Technician', 15, 'Employee', 3, '1508 Mallard Circle', 'Betafo', 82533);
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (16, 'Dorise', 'Panting', 419580, 'Equipment Technician', 1, 'Employee', 3, '4 Florence Parkway', 'Ferkessédougou', 27464);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (16, 'Dorise', 'Panting', 419580, 'Equipment Technician', 16, 'Employee', 3, '4 Florence Parkway', 'Ferkessédougou', 27464);
 
 insert into equipmenttechnician (employeeid) values (12);
 insert into equipmenttechnician (employeeid) values (13);
@@ -91,11 +91,11 @@ insert into equipmenttechnician (employeeid) values (15);
 insert into equipmenttechnician (employeeid) values (16);
 
 -- DOCTORS
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (17, 'Guinna', 'Alelsandrovich', 320762, 'Doctor', 2, 'Employee', 3, '4 Talmadge Drive', 'Nariño', 87407);
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (18, 'Nat', 'Dowry', 349702, 'Doctor', 3, 'Employee', 5, '3 High Crossing Lane', 'Tancheng', 21472);
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (19, 'Faunie', 'Vennard', 486778, 'Doctor', 4, 'Employee', 4, '69 Atwood Drive', 'Polo', 46739);
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (20, 'Hadleigh', 'Lundberg', 424461, 'Doctor', 5, 'Employee', 4, '68369 Shoshone Alley', 'Aldeia da Mata', 21305);
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (21, 'Julius', 'Sehorsch', 184714, 'Doctor', 6, 'Employee', 5, '24 Swallow Center', 'Benisheikh', 45791);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (17, 'Guinna', 'Alelsandrovich', 320762, 'Doctor', 17, 'Employee', 3, '4 Talmadge Drive', 'Nariño', 87407);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (18, 'Nat', 'Dowry', 349702, 'Doctor', 18, 'Employee', 5, '3 High Crossing Lane', 'Tancheng', 21472);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (19, 'Faunie', 'Vennard', 486778, 'Doctor', 19, 'Employee', 4, '69 Atwood Drive', 'Polo', 46739);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (20, 'Hadleigh', 'Lundberg', 424461, 'Doctor', 20, 'Employee', 4, '68369 Shoshone Alley', 'Aldeia da Mata', 21305);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (21, 'Julius', 'Sehorsch', 184714, 'Doctor', 21, 'Employee', 5, '24 Swallow Center', 'Benisheikh', 45791);
 
 insert into doctor (employeeid, gender, specialty, graduatedfrom) values (17, 'Male', 'Dermatology', 'WPI');
 insert into doctor (employeeid, gender, specialty, graduatedfrom) values (18, 'Female', 'Anesthesiology', 'WPI');
