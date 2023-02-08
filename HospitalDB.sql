@@ -6,7 +6,7 @@ CREATE TABLE employee (
     jobtitle      VARCHAR(40),
     officenum     INTEGER,
     employeerank  VARCHAR2(40) NOT NULL,
-    supervisorid  INTEGER NOT NULL,
+    supervisorid  INTEGER,
     addressstreet VARCHAR2(40) NOT NULL,
     addresscity   VARCHAR2(40) NOT NULL,
     addresszip    INTEGER NOT NULL,
