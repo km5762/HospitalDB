@@ -8,6 +8,7 @@ FROM
     doctor
 WHERE
     graduatedfrom = 'WPI';
+
 --NUMBER 2
 SELECT
     employeeid,
@@ -19,6 +20,7 @@ FROM
     employee
 WHERE
     supervisorid = 3;
+
 --NUMBER 3
 SELECT
     ssn,
@@ -27,6 +29,7 @@ FROM
     admission
 GROUP BY
     ssn;
+
 --NUMBER 4
 SELECT
     ssn,
@@ -55,6 +58,73 @@ FROM
 where admission.ssn = patient.ssn
 GROUP BY
     admission.ssn, firstname, lastname;
+
+--NUMBER 5
+SELECT
+    roomnum
+    
+FROM
+    equipment
+WHERE  
+    serialnum = 'A01-02X'
+
+--NUMBER 6
+SELECT
+    employeeid,
+    accesscount
+FROM (
+        SELECT 
+            employeeid, COUNT(roomnum) AS accesscount
+        FROM
+            roomaccess
+        GROUP BY 
+            employeeid
+    )
+WHERE  
+    accesscount = (SELECT MAX(COUNT(roomnum)) FROM roomaccess GROUP BY employeeid);
+
+
+--NUMBER 7
+((SELECT 
+    'regular employees' AS TYPE, COUNT(employeeid) AS COUNT
+FROM 
+    employee
+WHERE
+    employeerank = 'Employee'
+GROUP BY employeerank)
+UNION
+(SELECT 
+    'division managers' AS TYPE, COUNT(employeeid) AS COUNT
+FROM 
+    employee
+WHERE
+    employeerank = 'Division Manager'
+GROUP BY employeerank)
+UNION
+(SELECT 
+    'general managers' AS TYPE, COUNT(employeeid) AS COUNT
+FROM 
+    employee
+WHERE
+    employeerank = 'General Manager'
+GROUP BY employeerank))
+ORDER BY COUNT DESC;
+
+--NUMBER 8
+SELECT 
+    ssn,
+    firstname,
+    lastname
+FROM (
+    SELECT
+        ssn
+    FROM
+        admission
+    WHERE
+        futurevisit IS NOT NULL
+        )
+NATURAL JOIN patient;
+
 -- NUMBER 9
 SELECT
     *
