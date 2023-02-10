@@ -62,12 +62,10 @@ GROUP BY
 --NUMBER 5
 SELECT
     roomnum
-    
 FROM
     equipment
 WHERE  
-    serialnum = 'A01-02X'
-
+    serialnum = 'A01-02X';
 --NUMBER 6
 SELECT
     employeeid,
