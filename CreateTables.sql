@@ -1,3 +1,4 @@
+--DO NOT RUN SCRIPT
 CREATE TABLE employee (
     employeeid    INTEGER,
     firstname     VARCHAR2(40) NOT NULL,
