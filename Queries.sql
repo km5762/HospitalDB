@@ -135,3 +135,29 @@ INTERSECT
 (SELECT equipmenttypeid
  FROM   equipment
  WHERE  purchaseyear = 2011); 
+ 
+ --Use the views created above (you may need the original tables as well) to report the 
+--critical-case patients with number of admissions to ICU greater than 4.
+select patient_ssn, firstname, lastname
+from criticalcases
+where numberofadmissionstoicu > 4;
+
+--Use the views created above (you may need the original tables as well) to report the 
+--overloaded doctors that graduated from WPI. You should report the doctor ID, firstName, 
+--and lastName
+select doctorid, graduatedfrom
+from doctorsload
+where  load = 'Overloaded';
+
+--Use the views created above (you may need the original tables as well) to report the 
+--comments inserted by underloaded doctors when examining critical-case patients. You 
+--should report the doctor Id, patient SSN, and the comment.
+
+select d.doctorid, a.ssn, doctorscomment
+from admission a
+join (select patient_ssn from criticalcases) b 
+    on a.ssn = b.patient_ssn 
+join examine c
+    on c.admissionnum = a.admissionnum
+join (select doctorid from doctorsload where load = 'Underloaded') d
+    on c.employeeid = d.doctorid;
