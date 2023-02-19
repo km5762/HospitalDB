@@ -37,5 +37,48 @@ CREATE OR REPLACE VIEW criticalcases AS
         patient
     WHERE
         r2.ssn = patient.ssn;
-        
-        
+
+-- PROBLEM 2
+CREATE OR REPLACE VIEW doctorsload AS
+    (
+        SELECT
+            doctor.employeeid AS doctorid,
+            graduatedfrom,
+            'Overloaded'      AS load
+        FROM
+            (
+                SELECT
+                    employeeid
+                FROM
+                    examine
+                GROUP BY
+                    employeeid
+                HAVING
+                    COUNT(*) > 10
+            ) r1,
+            doctor
+        WHERE
+            doctor.employeeid = r1.employeeid
+    )
+    UNION
+    (
+        SELECT
+            doctor.employeeid AS doctorid,
+            graduatedfrom,
+            'Underloaded'     AS load
+        FROM
+            (
+                SELECT
+                    employeeid
+                FROM
+                    examine
+                GROUP BY
+                    employeeid
+                HAVING
+                    COUNT(*) <= 10
+            ) r1,
+            doctor
+        WHERE
+            doctor.employeeid = r1.employeeid
+    );
+
