@@ -81,15 +81,15 @@ insert into employee (employeeid, firstname, lastname, salary, jobtitle, officen
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (7, 'Zed', 'Kike', 424260, 'Human Resources Assistant II', 7, 'Employee', 3, '00 Bowman Hill', 'Socorro', 19848);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (8, 'Elsa', 'Roache', 350224, 'Civil Engineer', 8, 'Employee', 4, '03 Fairview Avenue', 'Notodden', 93462);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (9, 'Abigale', 'Robelin', 360746, 'Quality Engineer', 9, 'Employee', 5, '60 Troy Avenue', 'Suugaant', 61957);
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (10, 'Janeta', 'Bohman', 253120, 'Programmer I', 10, 'Employee', 6, '3 Moose Drive', 'Sulechów', 38477);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (10, 'Janeta', 'Bohman', 253120, 'Programmer I', 10, 'Employee', 6, '3 Moose Drive', 'Sulechï¿½w', 38477);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (11, 'Cordelie', 'MacGillacolm', 351449, 'GIS Technical Architect', 11, 'Employee', 3, '72553 Elgar Avenue', 'Peoria', 36872);
 
 -- EQUIPMENT TECHS
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (12, 'Alyda', 'Seers', 324013, 'Equipment Technician', 12, 'Employee', 4, '574 Anthes Terrace', 'Nizhnedevitsk', 77412);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (13, 'Patrizia', 'Rablin', 281499, 'Equipment Technician', 13, 'Employee', 5, '190 Carpenter Place', 'Utan', 17765);
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (14, 'Anatole', 'Uren', 130515, 'Equipment Technician', 14, 'Employee', 6, '32781 Little Fleur Avenue', 'Du’ermenqin', 18040);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (14, 'Anatole', 'Uren', 130515, 'Equipment Technician', 14, 'Employee', 6, '32781 Little Fleur Avenue', 'Duï¿½ermenqin', 18040);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (15, 'Yoshi', 'Harcase', 477221, 'Equipment Technician', 15, 'Employee', 3, '1508 Mallard Circle', 'Betafo', 82533);
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (16, 'Dorise', 'Panting', 419580, 'Equipment Technician', 16, 'Employee', 3, '4 Florence Parkway', 'Ferkessédougou', 27464);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (16, 'Dorise', 'Panting', 419580, 'Equipment Technician', 16, 'Employee', 3, '4 Florence Parkway', 'Ferkessï¿½dougou', 27464);
 
 insert into equipmenttechnician (employeeid) values (12);
 insert into equipmenttechnician (employeeid) values (13);
@@ -98,7 +98,7 @@ insert into equipmenttechnician (employeeid) values (15);
 insert into equipmenttechnician (employeeid) values (16);
 
 -- DOCTORS
-insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (17, 'Guinna', 'Alelsandrovich', 320762, 'Doctor', 17, 'Employee', 3, '4 Talmadge Drive', 'Nariño', 87407);
+insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (17, 'Guinna', 'Alelsandrovich', 320762, 'Doctor', 17, 'Employee', 3, '4 Talmadge Drive', 'Nariï¿½o', 87407);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (18, 'Nat', 'Dowry', 349702, 'Doctor', 18, 'Employee', 5, '3 High Crossing Lane', 'Tancheng', 21472);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (19, 'Faunie', 'Vennard', 486778, 'Doctor', 19, 'Employee', 4, '69 Atwood Drive', 'Polo', 46739);
 insert into employee (employeeid, firstname, lastname, salary, jobtitle, officenum, employeerank, supervisorid, addressstreet, addresscity, addresszip) values (20, 'Hadleigh', 'Lundberg', 424461, 'Doctor', 20, 'Employee', 4, '68369 Shoshone Alley', 'Aldeia da Mata', 21305);
@@ -161,6 +161,38 @@ insert into examine (employeeid, admissionnum, doctorscomment) values (19, 15, '
 insert into examine (employeeid, admissionnum, doctorscomment) values (19, 16, 'potassium chloride');
 insert into examine (employeeid, admissionnum, doctorscomment) values (21, 5, 'alprazolam');
 insert into examine (employeeid, admissionnum, doctorscomment) values (20, 6, 'Ibuprofen');
+
+-- STAYINS
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (14, 5, date '2022-07-29', date '2022-07-25');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (13, 2, date '2022-07-03', date '2022-03-29');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (2, 6,  date '2022-12-04', date '2022-11-22');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (3, 10, date '2022-11-29', date '2022-04-06');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (1, 5,  date '2022-11-18', date '2022-10-31');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (2, 6,  date '2022-09-02', date '2022-12-23');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (9, 1,  date '2022-05-07', date '2022-11-02');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (11, 8, date '2023-01-26', date '2022-11-15');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (5, 1, date '2022-06-13', date '2022-03-13');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (9, 3,  date '2022-11-07', date '2022-11-14');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (7, 3, date '2022-04-10', date '2022-09-16');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (2, 5,  date '2022-06-14', date '2022-08-16');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (13, 1, date '2022-12-19', date '2023-01-12');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (12, 6, date '2022-10-05', date '2022-05-19');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (16, 7, date '2022-09-04', date '2023-01-21');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (15, 1, date '2022-11-03', date '2022-12-06');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (7, 9,  date '2022-10-23', date '2022-07-25');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (14, 6, date '2022-03-12', date '2022-11-29');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (16, 1, date '2022-05-03', date '2022-10-07');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (16, 1, date '2022-07-19', date '2022-08-17');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (11, 3, date '2022-04-22', date '2022-04-18');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (1, 1,  date '2022-05-21', date '2022-10-05');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (12, 2, date '2023-02-03', date '2022-05-29');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (15, 6, date '2022-08-15', date '2022-11-06');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (1, 9,  date '2022-07-31', date '2022-06-03');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (15, 1, date '2022-09-09', date '2022-12-15');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (16, 10,date '2022-10-16', date '2022-05-16');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (7, 3,  date '2022-09-21', date '2022-04-23');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (2, 5,  date '2022-04-28', date '2023-01-20');
+insert into stayin (admissionnum, roomnum, startdate, enddate) values (9, 3,  date '2022-09-30', date '2022-03-25');
 
 
 
