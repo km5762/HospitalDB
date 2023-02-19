@@ -36,3 +36,13 @@ BEGIN
 
 END;
 /
+
+-- PROBLEM 2
+CREATE OR REPLACE TRIGGER tr_insertorupdate_admission BEFORE
+    INSERT OR UPDATE ON admission
+    FOR EACH ROW
+BEGIN
+    :new.insurancepayment := ( 0.65 * :new.totalpayment );
+END;
+/
+
