@@ -1,4 +1,3 @@
-import javax.print.Doc;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -123,6 +122,16 @@ public class Reporting {
                 for (int doctor = 0; doctor < doctorIdCount; doctor++) {
                     System.out.println("\tDoctor ID: " + doctorIds[doctor]);
                 }
+                break;
+            }
+            case "4": {
+                System.out.println("Enter Admission Number:");
+                final int admissionNumber = scanner.nextInt();
+                System.out.println("Enter the new total payment:");
+                final int newTotalPayment = scanner.nextInt();
+
+                final String updateQ = "UPDATE admission SET totalpayment = " + newTotalPayment + " WHERE admissionnum = " + admissionNumber;
+                stmt.executeQuery(updateQ);
                 break;
             }
             default:
