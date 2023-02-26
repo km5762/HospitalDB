@@ -134,30 +134,49 @@ HAVING Count(employeeid) > 2;
 INTERSECT
 (SELECT equipmenttypeid
  FROM   equipment
- WHERE  purchaseyear = 2011); 
- 
- --Use the views created above (you may need the original tables as well) to report the 
+ WHERE  purchaseyear = 2011);
+
+--Use the views created above (you may need the original tables as well) to report the 
 --critical-case patients with number of admissions to ICU greater than 4.
-select patient_ssn, firstname, lastname
-from criticalcases
-where numberofadmissionstoicu > 4;
+SELECT patient_ssn,
+       firstname,
+       lastname
+FROM   criticalcases
+WHERE  numberofadmissionstoicu > 4;
 
 --Use the views created above (you may need the original tables as well) to report the 
 --overloaded doctors that graduated from WPI. You should report the doctor ID, firstName, 
 --and lastName
-select doctorid, graduatedfrom
-from doctorsload
-where  load = 'Overloaded';
+SELECT doctorid,
+       graduatedfrom
+FROM   doctorsload
+WHERE  load = 'Overloaded';
 
 --Use the views created above (you may need the original tables as well) to report the 
 --comments inserted by underloaded doctors when examining critical-case patients. You 
 --should report the doctor Id, patient SSN, and the comment.
+SELECT d.doctorid,
+       a.ssn,
+       doctorscomment
+FROM   admission a
+       join (SELECT patient_ssn
+             FROM   criticalcases) b
+         ON a.ssn = b.patient_ssn
+       join examine c
+         ON c.admissionnum = a.admissionnum
+       join (SELECT doctorid
+             FROM   doctorsload
+             WHERE  load = 'Underloaded') d
+         ON c.employeeid = d.doctorid;
+         
+--select admission.admissionnum, ssn, admissiondate, totalpayment, roomnum, startdate, enddate, employeeid as doctorid
+--from admission
+--join examine
+--    on admission.admissionnum = examine.admissionnum
+--join stayin
+--    on admission.admissionnum = stayin.admissionnum;
+SELECT employeeid FROM examine WHERE admissionnum = 1;
 
-select d.doctorid, a.ssn, doctorscomment
-from admission a
-join (select patient_ssn from criticalcases) b 
-    on a.ssn = b.patient_ssn 
-join examine c
-    on c.admissionnum = a.admissionnum
-join (select doctorid from doctorsload where load = 'Underloaded') d
-    on c.employeeid = d.doctorid;
+SELECT roomnum, startdate, enddate FROM stayin WHERE admissionnum = 1;
+
+SELECT admissionnum, ssn, admissiondate, totalpayment FROM admission WHERE admissionnum = 1;
