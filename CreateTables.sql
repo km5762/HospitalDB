@@ -64,7 +64,7 @@ CREATE TABLE equipment (
     serialnum       VARCHAR2(40),
     equipmenttypeid INTEGER,
     purchaseyear    INTEGER,
-    lastinspection  DATE,
+    lastinspection  DATE NOT NULL,
     roomnum         INTEGER,
     CONSTRAINT equipment_equipmenttypeid_fk FOREIGN KEY ( equipmenttypeid )
         REFERENCES equipmenttype ( equipmenttypeid ),

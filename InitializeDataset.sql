@@ -36,21 +36,6 @@ insert into equipmenttype (equipmenttypeid, equipmentdesc, equipmentmodel, instr
 insert into equipmenttype (equipmenttypeid, equipmentdesc, equipmentmodel, instructions, numberofunits) values (2, 'Uses sound waves to produce images of structures within the body', 'Ultrasound', '1. Turn on 2. Use 3. Profit', 3);
 insert into equipmenttype (equipmenttypeid, equipmentdesc, equipmentmodel, instructions, numberofunits) values (3, 'Creates cross sectional imaging of bones, tissues, and blood vessels.', 'CT Scanner', '1. Turn on 2. Use 3. Profit', 3);
 
--- MRI MACHINES
-insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('A01-02X', 1, 2010, date '2016-01-01', 1);
-insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('A02-03X', 1, 2011, date '2015-01-01', 1);
-insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('A03-04X', 1, 2001, date '2013-01-01', 1);
-
--- ULTRASOUND MACHINES
-insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('B01-02Y', 2, 2010, date '2018-01-01', 1);
-insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('B02-03Y', 2, 2011, date '2014-01-01', 1);
-insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('B03-04Y', 2, 2002, date '2013-01-01', 1);
-
--- CT SCANNERS
-insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('C01-02Z', 3, 2020, date '2021-01-01', 1);
-insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('C02-03Z', 3, 2019, date '2020-01-01', 1);
-insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('C03-04Z', 3, 2014, date '2022-01-01', 1);
-
 -- ADMISSIONS
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (1, date '2022-06-20', date '2022-08-08', 933, 513, '111-22-3333', date '2022-09-26');
 insert into admission (admissionnum, admissiondate, leavedate, totalpayment, insurancepayment, ssn, futurevisit) values (2, date '2022-08-08', date '2022-09-26', 6301, 3341, '111-22-3333', date '2023-02-05');
@@ -149,6 +134,22 @@ insert into canrepairequipment (equipmenttypeid, employeeid) values (2, 14);
 insert into canrepairequipment (equipmenttypeid, employeeid) values (3, 14);
 insert into canrepairequipment (equipmenttypeid, employeeid) values (1, 16);
 insert into canrepairequipment (equipmenttypeid, employeeid) values (3, 16);
+
+-- MRI MACHINES
+insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('A01-02X', 1, 2010, date '2016-01-01', 1);
+insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('A02-03X', 1, 2011, date '2015-01-01', 1);
+insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('A03-04X', 1, 2001, date '2013-01-01', 1);
+
+-- ULTRASOUND MACHINES
+insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('B01-02Y', 2, 2010, date '2018-01-01', 1);
+insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('B02-03Y', 2, 2011, date '2014-01-01', 1);
+insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('B03-04Y', 2, 2002, date '2013-01-01', 1);
+
+-- CT SCANNERS
+insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('C01-02Z', 3, 2020, date '2021-01-01', 1);
+insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('C02-03Z', 3, 2019, date '2020-01-01', 1);
+insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('C03-04Z', 3, 2014, date '2022-01-01', 1);
+insert into equipment (serialnum, equipmenttypeid, purchaseyear, lastinspection, roomnum) values ('C04-05Z', 3, 2014, date '2023-02-01', 1);
 
 -- EXAMINATIONS 
 insert into examine (employeeid, admissionnum, doctorscomment) values (17, 1, 'Calcium Chloride');

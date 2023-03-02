@@ -14,5 +14,6 @@ DROP TABLE DOCTOR;
 DROP TABLE EMPLOYEE;
 
 @CreateTables.sql
+@Triggers.sql
 @InitializeDataset.sql
 @Queries.sql
